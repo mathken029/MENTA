@@ -18,6 +18,9 @@ console.log(apple);
 // ②定義したweightに60を代入してください。
 // ③定義したweightの値をログで確認してください。
 
+let weight;
+weight = 60;
+console.log(weight);
 
 // 引数を+1する関数を作る
 // "①仮引数numを持つ関数addOneを定義してください。
@@ -25,14 +28,21 @@ console.log(apple);
 // ③関数addOneに実引数3を渡して実行し、返り値をログ出力してください。"
 
 // ①②に従って関数を定義してください。
-const addOne = () => {
+const addOne = (num) => {
   // ここに処理を書いてください。
+  return num + 1;
 }
 // ③ログ出力してください。
-console.log()
+console.log(addOne(3))
 
 
 //引数を-1する関数を作る
+const hikuOne = (num) => {
+  // ここに処理を書いてください。
+  return num - 1;
+}
+// ③ログ出力してください。
+console.log(hikuOne(3))
 
 
 // 引数の文字数が10文字未満ならtrue,10文字以上だったらfalseを返す関数を作る
@@ -41,15 +51,32 @@ console.log()
 // ③関数getLengthに実引数""apple""を渡して実行し、返り値をログ出力してください。
 
 // ①②に従って関数を定義してください。
-const judgeLength = () => {
+const judgeLength = (str) => {
   // ここに処理を書いてください。
-
+  if(str.length < 10) {
+    return true;
+  }else{
+    return false;
+  }
 }
-// ③ログ出力してください。
-console.log()
+
+  // ③ログ出力してください。
+console.log(judgeLength("apple"));
 
 
 //引数の文字数が5文字以上かつ10文字未満ならtrueを返す関数を作る
+const judgeLengthOver5 = (str) => {
+  // ここに処理を書いてください。
+  if(str.length < 10 && str.length >= 5) {
+    console.log(str.length);
+      return true;
+  }else{
+    return false;
+  }
+}
+
+  // ③ログ出力してください。
+  console.log(judgeLengthOver5("appl"));
 
 
 //引数が文字列ならtrue、それ以外ならfalseを返す関数を作る
@@ -58,12 +85,12 @@ console.log()
 //③関数isStringに実引数3を渡して実行し、返り値をログ出力してください。
 
 // ①②に従って関数を定義してください。
-const isString = () => {
+const isString = (parameter) => {
   // ここに処理を書いてください。
-
+  return typeof parameter === 'string';
 }
 // ③ログ出力してください。
-console.log()
+console.log(isString(3))
 
 //2つの引数を合計する関数を作る
 //①仮引数num1, num2を持つ関数getSumを定義してください。
@@ -71,12 +98,12 @@ console.log()
 //③関数getSumに実引数3, 2を渡して実行し、返り値をログ出力してください。
 
 // ①②に従って関数を定義してください。
-const getSum = () => {
+const getSum = (num1, num2) => {
   // ここに処理を書いてください。
-
+  return num1 + num2
 }
 // ③ログ出力してください。
-console.log()
+console.log(getSum(3, 2))
 
 
 //2つの引数の文字列を結合する関数を作る
@@ -85,12 +112,12 @@ console.log()
 // ③関数getFullNameに実引数""Tanaka"", ""Taro""を渡して実行し、返り値をログ出力してください。
 
 // ①②に従って関数を定義してください。
-const getFullName = (){
+const getFullName = (firstName, lastName) => {
   // ここに処理を書いてください。
-
+  return firstName + " " + lastName
 }
 // ③ログ出力してください。
-console.log()
+console.log(getFullName("Tanaka", "Taro"))
 
 //■カテゴリ：文字列
 
