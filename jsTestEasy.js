@@ -124,65 +124,78 @@ console.log(getFullName("Tanaka", "Taro"))
 //文字列"あいうえお"を変数で定義する。
 //①定数answerに代入してください。
 
-
+let str03 = "あいうえお"
+const answer01 = str03;
 
 //文字列"あいうえお"を"かきくけこ"に変更する
 //①変数answerにあいうえおを格納してください。
 //②変数answerの値あいうえおをかきくけこに変更してください。
 
-let answer = 
-answer = 
+let answer02 = "あいうえお"
+answer02 = "かきくけこ"
 
 //文字列"あいうえお"と"かきくけこ"の2つの文字列を連結する。
 // ①定数str1にあいうえおを代入してください。
 // ②定数str２にかきくけこを代入してください。
 // ③定数answerにstr1とstr2を連結した値を代入してください。
 
-const answer = "あいうえお"
-// const str1 = 
-// const str2 = 
-// const answer = 
+const str1 = "あいうえお"
+const str2 = "かきくけこ"
+const answer = str1 + str2
 
+console.log(answer)
 
 //■カテゴリ：文字列操作
 
 //文字列strの部分文字列を返してください。
 const str = 'Menta';
-
-// Menの部分だけコンソールに出力してください
-
 const alphabet = "abcde";
 
+// Menの部分だけコンソールに出力してください
+console.log(str.substring(0, 3))
+
 // 最後のeだけコンソールに出力してください
-
-
- console.log(str.substring());
- console.log(alphabet.substring());
+console.log(alphabet.substring(alphabet.length - 1));
 
  //confirmメソッドを使用し、名前が間違っていないか確認するポップアップを表示させてましょう
-
+ const namae = 'Scot';
+ if (confirm(namae + 'さんで間違い無いですか？')) {
+   console.log('ようこそ' + namae + 'さん');
+ } else {
+   console.log("もう一度正しい名前を入力してください");
+ }
+ 
 
  //■カテゴリ：オブジェクト
 
  //空のオブジェクトを定義する
  //①定数personにオブジェクトを定義する。
 
+const person = {}
+console.log(person)
 
  //プロパティnameが"ボブ"、ageが20であるオブジェクトを定義する
-
+const person = {name:"ボブ", age:20}
+console.log(person)
 
 //オブジェクトのageプロパティの値を30に変更し、ログに出力しよう
 //①ageプロパティに30の数字を代入してください。
 //②コンソール上にobjectを表示させ、ageが変更されていることを確認してください。
 
-const object = {age: 35, weight: 80}
 // ここから処理を書いてください。
+person.age = 30
+console.log(person)
 
 
 //オブジェクトのageプロパティの値を関数を使って、30に変更し、ログに出力しよう
-
 const object = {age: 35, weight: 80}
 // ここから処理を書いてください。
+const changeObjectAge = (object) =>{
+  object.age = 30
+}
+changeObjectAge(object)
+console.log(object)
+
 
 //オブジェクトのageプロパティの値に+1する
 //①ageプロパティの値を+1してください。
@@ -190,19 +203,30 @@ const object = {age: 35, weight: 80}
 
 const object = {age: 35, weight: 80}
 // ここから処理を書いてください。
+object.age++
+console.log(object)
 
 
 //オブジェクトのageプロパティの値を関数を使って、+1増やして、ログに出力しよう
 
 const object = {age: 35, weight: 80}
 // ここから処理を書いてください。
+const addOneObjectAge = (object) =>{
+  object.age++
+}
+addOneObjectAge(object)
+console.log(object)
 
 
 //libraryオブジェクトのopenHourプロパティの値を更新し、ログに出力してみよう
 //①定数libraryの中のopenHourプロパティの値を "8am ~ 9pm"に更新してください。
 const library = {
-  openHour: ""7am ~ 10pm""
+  openHour: "7am ~ 10pm"
 }
+
+library.openHour = "8am ~ 9pm"
+
+console.log(library)
 
 //libraryオブジェクトのopenHourプロパティの値を関数を使って更新し、ログに出力してみよう
 //①定数libraryの中のopenHourプロパティの値を "8am ~ 9pm"に更新してください。
@@ -215,66 +239,79 @@ const library = {
 //①weightプロパティに""50kg""の値を持たせて、定数objectに追加してください。
 //②コンソール上にobjectを表示させ、weightが追加されていることを確認してください。
 
-const object = {name: ""Bob"", age: 35}
+const object = {name: "Bob", age: 35}
 // ここから処理を書いてください。
-
+object.weight = "50kg"
+console.log(object)
 
 //オブジェクトのnameプロパティを削除する
 //①定数objectのnameプロパティを削除してください。
 //②コンソール上にobjectを表示させ、nameが削除されていることを確認してください。
 
-const object = {name: ""Bob"", age: 35}
+const object = {name: "Bob", age: 35}
 // ここから処理を書いてください。
-
+delete object.name
+console.log(object)
 
 //■カテゴリ：配列操作
 
 //空の配列を定義する
-
+const arr = []
+console.log(arr)
 
 //文字列要素"りんご"、"みかん"、"いちご"が入った配列を定義する
 //文字列要素"りんご"、"みかん"、"いちご"が入った配列を定義してください。
-
+const arr = ["りんご", "みかん", "いちご"]
+console.log(arr)
 
 //配列の2番目の要素をログ出力する
 //配列の2番目の要素をログ出力してください。
 
-const arr = [""りんご"",""みかん"",""いちご""];
-
 // arr[インデックス]のように書きましょう
+const arr = ["りんご", "みかん", "いちご"]
+console.log(arr[1])
 
 
 //配列の3番目の要素を”もも”に変更してログ出力する
 //配列の3番目の要素を”もも”に変更してログ出力してください。
 
-const arr = [""りんご"",""みかん"",""いちご""];
+const arr = ["りんご", "みかん", "いちご"]
+arr[2] = "もも"
+console.log(arr)
 
 
 //配列の最後に文字列要素"すいか"を追加する
 //配列の最後に文字列要素"すいか"を追加してください。
 
-const arr = [""りんご"",""みかん"",""いちご""];
+const arr = ["りんご", "みかん", "いちご"]
+arr.push("すいか")
+console.log(arr)
 
 //配列の最後の要素を削除する
 //配列の最後の要素を削除してください。
 
-const arr = [""りんご"",""みかん"",""いちご""];
+const arr = ["りんご", "みかん", "いちご"]
+arr.pop()
+console.log(arr)
 
 
 //配列の最初に文字列要素"すいか"を追加する
 //配列の最初に文字列要素"すいか"を追加してください。
-const arr = [""りんご"",""みかん"",""いちご""];
+const arr = ["りんご", "みかん", "いちご"]
+arr.unshift("すいか")
+console.log(arr)
 
 
 //配列の最初の要素を削除する
 //配列の最初の要素を削除してください。
-const arr = [""りんご"",""みかん"",""いちご""];
-
+const arr = ["りんご", "みかん", "いちご"]
+arr.shift()
+console.log(arr)
 
 
 //配列から"みかん"のindexを取得する
 //配列から"みかん"のindexを取得してください。
-const arr = [""りんご"",""みかん"",""いちご""];
+const arr = ["りんご", "みかん", "いちご"]
 
 
 //配列に"りんご"が含まれているか確かめる
