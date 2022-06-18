@@ -313,34 +313,40 @@ console.log(arr)
 //配列から"みかん"のindexを取得してください。
 const arr = ["りんご", "みかん", "いちご"]
 
+console.log(arr.indexOf("みかん"))
 
 //配列に"りんご"が含まれているか確かめる
 //配列arrayの中に"りんご"が含まれているか確かめてください。
-const array= [~~~~~~~~~~]
+const arr = ["りんご", "みかん", "いちご"]
 // りんごが含まれていたらtrueを代入してください。
-// const answer =
+const answer = arr.includes("りんご")
+console.log(answer)
 
 
 //配列の2番目の要素と3番目の要素からなる配列を作る
 //配列arrayの2番目と3番目だけを格納した配列を作成してください。
 
+const arr = ["りんご", "みかん", "いちご"]
 //2番目の要素と3番目の要素からなる配列をanswer変数に代入してください。
-// const answer =
+const answer = arr.slice(1, 3)
+console.log(answer)
 
 
 //配列の3番目の要素を削除する
 //配列arrayの3番目の要素を削除してください。
+const arr = ["りんご", "みかん", "いちご"]
 
 //3番目の要素が削除された配列をanswer変数に代入してください。
-// const answer =
+const answer = arr.splice(2, 1)
+console.log(answer)
 
 
 //配列のそれぞれの要素をログ出力する
 //配列arrayの要素をそれぞれコンソールに出力してください。
 
-const fruits = [ ""apple"", ""orange"", ""grape""];
+const fruits = [ "apple", "orange", "grape"];
+fruits.map(fruit => {console.log(fruit)})
 
-// const answer = 
 
 
 //配列のそれぞれの要素を2倍にしてログ出力する
@@ -349,60 +355,73 @@ const fruits = [ ""apple"", ""orange"", ""grape""];
 const numbers = [1, 2, 3]
 
 // 配列要素を2倍した配列を定義
-// const doubleNumbers = 
+const doubleNumbers = numbers.map(number => number * 2)
 
 // 関数を発火してログ出力
-// console.log() // [2, 4, 6]
+console.log(doubleNumbers) // [2, 4, 6]
 
 
 //配列のそれぞれの要素を3倍に加工した配列を取得する
 //配列arrayの要素をそれぞれ３倍にした配列を取得してください。
 
 const numbers = [1, 2, 3]
-// const tripleNumbers = 
-
+const tripleNumbers = numbers.map(number => number * 3)
+console.log(tripleNumbers)
 
 //文字コード順に並べ替える
 //配列arrayの要素を文字コード順に並びかえてください。
 
-const array=[""いぬ"",""さる"",""きじ""];
+const array=["いぬ","さる","きじ"]
+console.log(array.sort())
 
 //配列を逆順にする
 //配列を逆順にしてください。
 
-const arr = [""りんご"",""みかん"",""いちご""];
+const arr = ["りんご","みかん","いちご"]
 // ここに処理を書いてください。
+console.log(arr.reverse())
 
 
 //昇順ソートする
 //配列arrayの要素を昇順に並びかえてください。
 
-const array = [1975,11,20];
+const array = [1975,11,20]
+array.sort(function(a, b) {
+  return a - b
+})
+console.log(array)
 
 //降順ソートする
 //配列arrayの要素を降順に並びかえてください。
 
 const array = [1975,11,20];
+array.sort((a, b) => b - a)
+console.log(array)
 
 //配列の全要素を引数の文字列で連結させる
 //配列arrayの要素を,（カンマ）で区切った文字列に連結した新しい配列を返してください。
 
-const array = [""りんご""、""みかん""、""いちご""];
+const array = ["りんご","みかん","いちご"];
 // ここに処理を書いてください。
-
+console.log(array.join(","))
 
 //スプレッド構文を用いて配列の要素を展開する①
 //配列arrayの要素をarrayCloneでスプレッド構文を使用して展開し、arrayのクローンを作成してください。
 
 const array= [1,2,3,4,5];
-// const arrayClone =
+const arrayClone = [...array]
+console.log(arrayClone)
+
+const array= [1,2,3,4,5];
+const arrayClone = array
+console.log(arrayClone)
 
 //スプレッド構文を用いて配列の要素を展開する②
 //配列arrayの要素をarray2で展開し、新たな要素、6,7,8,9,10を追加した新しい配列を作成してください。
 
 const array= [1,2,3,4,5];
-// const array2 = 
-
+const array2 = [...array, 6, 7 ,8, 9, 10]
+console.log(array2)
 
 //■配列オブジェクト操作
 
@@ -410,7 +429,11 @@ const array= [1,2,3,4,5];
 //それぞれidは1,2,3、nameは""ジョン"",""ボブ"",""マイケル""、ageは15,20,30とする
 //①定数objectに代入してください。
 
-// const object =
+const object = [
+  {id: 1, name: 'John', age: 15},
+  {id: 2, name: 'Bob', age: 20},
+  {id: 3, name: 'Michael', age: 15},
+];
 
 
 //オブジェクト配列の3番目の要素のageを取得してログ出力する
@@ -420,12 +443,17 @@ const object = [
   {id: 3, name: 'Michael', age: 15},
 ];
 // ここに処理を書いてください。
+console.log(object[2].age)
 
 //配列内のオブジェクトのnameプロパティの文字列が3文字のオブジェクト要素からなる配列を取得する。
-// const object =
+const object = [
+  {id: 1, name: 'John', age: 15},
+  {id: 2, name: 'Bob', age: 20},
+  {id: 3, name: 'Michael', age: 15},
+];
 
-// const found = 
-
+const found = object.filter(object => object.name.length === 3)
+console.log(found)
 
 //配列内のオブジェクトのidプロパティが1の要素を除いた配列を取得する。
 
@@ -434,10 +462,13 @@ const object = [
   {id: 2, name: 'Bob', age: 20},
   {id: 3, name: 'Michael', age: 15},
 ];
-// const found =
+
+const found = object.filter(object => object.id !== 1)
+console.log(found)
 
 
 //■カテゴリ：スプレッド構文
+//★例文・答えが無いためスキップとする
 
 //配列をコピーして、新しい配列を作成しよう
 
