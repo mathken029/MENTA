@@ -123,7 +123,54 @@ section {
   width: 50%;
 }
 
+/* ============================
+ Works
+============================== */
 
+.works-contents {
+  display: flex;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+}
+
+.works-item{
+  width: 30%;
+  margin-bottom: 50px;
+}
+
+.works-item img {
+  width: 100%;
+}
+
+.works-item img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.works-view-more {
+  margin: 0 auto;
+  padding: 5px;
+
+  border-bottom: 1px solid #1b1b1b;
+  letter-spacing: 6px;
+}
+
+.works-view-more:hover {
+  background-color: #bebebe;
+}
+
+/* ============================
+ Career
+============================== */
+
+.career-contents {
+  margin: 70px 0px 20px 20px;
+}
+
+.career-contents p{
+  margin-bottom: 25px;
+}
 
   /* ============================
    footer
