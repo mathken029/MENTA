@@ -60,7 +60,7 @@ header nav ul li:hover {
 .first-view {
   width: 100%;
   height: 400px;
-  margin-bottom: 50px;
+  margin:0 auto;
 }
 
 .first-view img {
@@ -73,9 +73,7 @@ header nav ul li:hover {
   ============================== */
 main {
   width: 95%;
-  height: 800px;
-  margin: 0px auto 50px;
-  padding-top: 50px;
+  margin: 50px auto;
 }
 
 /* ============================
@@ -172,26 +170,67 @@ section {
   margin-bottom: 25px;
 }
 
+/* ============================
+ Contact
+============================== */
+form {
+  margin-left: 30px;
+}
+
+form ul li{
+  margin-bottom: 10px;
+}
+
+form ul li input {
+  padding: 10px;
+  width: 250px;
+  font-size: 16px;
+}
+
+form ul li textarea {
+  padding: 10px;
+  width: 400px;
+
+  font-size: 16px;
+}
+
+form button {
+  padding: 15px 50px;
+
+  font-size: 20px;
+  color: #fff;
+  background-color: rgb(129, 129, 129);
+  border: none;
+  outline: none;
+}
+
+form button:hover {
+  cursor: pointer;
+  background-color: rgb(90, 90, 90);
+}
+
   /* ============================
    footer
   ============================== */
 footer {
   width: 100%;
-  height: 180px;
-  padding: 10px;
-
-  background-color: purple;
 }
 
-.footer-top nav {
-  width: 30%;
-  height: 80px;
+.footer-top {
+  border-bottom: 2px solid #9c9a9a;
+}
 
-  background-color: black;
+.footer-top nav ul {
+  display: flex;
+}
+
+.footer-top nav ul li {
+  margin-left: 30px;
 }
 
 .footer-bottom p{
   height: 90px;
-
-  background-color: black;
+  text-align-last: right;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }

@@ -25,7 +25,7 @@
     </div>
 
     <main>
-      <section class="service-section">
+      <section id="service" class="service-section">
           <div class="setcion-title"><h1>Service</h1></div>
 
           <div class="service-contents">
@@ -61,7 +61,7 @@
               </div>
           </div>
       </section>
-      <section class="works-section">
+      <section id="works" class="works-section">
         <div class="setcion-title"><h1>Works</h1></div>
         <div class="works-contents">
             <div class="works-item"><img src="image/work1.jpg"></div>
@@ -74,7 +74,7 @@
             <div class="works-view-more"><a href="#">VIEW MORE</a></div>
         </div>
       </section>
-      <section class="career-section">
+      <section id="career" class="career-section">
         <div class="setcion-title"><h1>Career</h1></div>
         <div class="career-contents">
           <p>2000年から webデザイナーとしてキャリアをスタート。</p>
@@ -82,15 +82,39 @@
           <p>2010年からフリーランスへ転向し、web制作やコンサルティングを行っています。</p>
         </div>
       </section>
-      <section class="contact-form-section"></section>
+      <section id="contact" class="contact-form-section">
+        <div class="contact-title"><h1>Contact</h1></div>
+            <form>
+              <ul>
+                <li>氏名：</li>
+                <li><input type="text"></li>
+                <li>TEL：</li>
+                <li><input type="text"></li>
+                <li>Email：</li>
+                <li><input type="text"></li>
+                <li>内容：</li>
+                <li><textarea cols="30" rows="10"></textarea></li>
+              </ul>
+
+              <button>内容を送信する</button>
+            </form>
+      </section>
     </main>
 
     <footer>
       <div class="footer-top">
-        <nav></nav>
+        <nav>
+          <ul>
+            <li><a href="#top">TOP</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#contact-form">Contact</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="footer-bottom">
-        <p></p>
+        <p>© SUZUKI DESIGN</p>
       </div>
     </footer>
   </body>
