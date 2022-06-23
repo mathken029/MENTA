@@ -1,0 +1,115 @@
+/* ========================
+    body
+  ======================== */
+
+body {
+  font-family: 'Vollkorn', serif;
+  position: relative;
+}
+
+/* ========================
+    section - all
+  ======================== */
+
+
+/* ========================
+    header
+  ======================== */
+
+header {
+  position: fixed;
+  z-index: 2;
+  
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+
+  font-weight: bold;
+  background-color: #fff;
+  border-bottom: 1px solid #000000;
+}
+
+.header-title {
+  font-size: 40px;
+}
+
+  /* header - navigation */
+
+nav {
+  height: 40px;
+  font-size: 20px;
+  color: #000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-left: 80px;
+}
+
+nav a {
+  line-height: 40px;
+  color: #000;
+}
+
+nav a:hover {
+  color: #31c5b9;
+}
+
+/* ========================
+    first-view
+  ======================== */
+
+.top-img img {
+  width: 100%;
+}
+
+.first-view {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.top-title {
+  position: absolute;
+  top: 40%;
+  z-index: 1;
+  width: 100%;
+
+  text-align: center;
+  font-size: 60px;
+  color: black;
+
+  text-shadow: 
+  #fff 1px 1px 2px,
+  #fff -1px 1px 2px,
+  #fff 1px -1px 2px,
+  #fff -1px -1px 2px;
+}
+
+.first-view img {
+  width: 100%;
+  opacity: 0.9;
+}
+
+/* ========================
+    section - 事業内容(service)
+  ======================== */
+
+
+/* ========================
+    section - 採用情報(employment)
+  ======================== */
+
+
+/* ========================
+    section - 会社概要(company-information)
+  ======================== */
+
+
+/* ========================
+    footer
+  ======================== */
