@@ -3,7 +3,7 @@
   ======================== */
 
 body {
-  font-family: 'Vollkorn', serif;
+  font-family: 'MS Pゴシック', 'メイリオ';
   position: relative;
 }
 
@@ -175,12 +175,111 @@ nav a:hover {
     section - 採用情報(employment)
   ======================== */
 
+.employment-text {
+  width: 70%;
+  margin: 0 auto 100px;
+
+  line-height: 45px;
+  font-size: 25px;
+}
+
+.employment-table {
+  width: 70%;
+  margin: 0 auto 100px;
+
+  font-size: 20px;
+}
+
+.employment-table > thead > tr > th {
+  padding: 40px 0;
+  background-color: #a4f5ee;
+
+  text-align: center;
+}
+
+.employment-table > thead > tr > th:first-child {
+  width: 20%;
+}
+
+.employment-table > tbody > tr > th {
+  padding-left: 20px;
+}
+
+.employment-table > tbody > tr > td {
+  text-align: left;
+  padding: 30px;
+}
 
 /* ========================
     section - 会社概要(company-information)
-  ======================== */
+======================== */
 
+.company-information-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50%;
+  margin: 0 10% 0 35%;
+
+  font-size: 18px;
+}
+
+.company-information-lists > dt {
+  padding: 35px 0;
+  width: 40%;
+}
+
+.company-information-lists > dd {
+  padding: 35px 0;
+  width: 60%;
+}
 
 /* ========================
     footer
-  ======================== */
+======================== */
+
+footer {
+  padding: 100px 50px 50px;
+
+  color: #000;
+  font-weight: bold;
+  background: #31c5b9;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.footer-left h2 {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.footer-right > ul {
+  display: flex;
+}
+
+.footer-right > ul > li {
+  margin-right: 50px;
+
+  text-align: center;
+  font-size: 24px;
+  line-height: 35px;
+}
+
+.footer-right > ul > li > ul {
+  padding-left: 40px;
+  text-align-last: left;
+}
+
+.footer-right > ul > li > ul > li {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.footer-bottom {
+  font-size: 15px;
+  text-align: right;
+}
