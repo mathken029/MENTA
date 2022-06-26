@@ -1,21 +1,17 @@
+import React, { useState } from 'react'
 import logo from './logo.svg';
 import './App.css';
-
-const name = "libealくん"
-const number = 1 + 1
-
-const element = 
-  (
-    <>
-      <h1>こんにちは{name}！</h1>
-      <h2>1 + 1の答えは {number} です！</h2>
-    </>
-  )
+import Button from './Button'
 
 function App() {
+
+  const [count, setCount] = useState(0)
+  
   return (
     <div className="App">
-      {element}
+      <p>カウント：{count}</p>
+      <Button btn_click={() => setCount(count + 1)} btn_txt="クリックして+1してね"/>
+      <Button btn_click={() => setCount(count - 1)} btn_txt="クリックして-1してね"/>
     </div>
   );
 }
