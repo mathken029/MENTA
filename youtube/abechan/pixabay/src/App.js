@@ -4,7 +4,7 @@ import SearchBar from "./components/SearchBar";
 import ImageList from "./components/ImageList";
 
 const App = () => {
-  const { images, setImages } = useState([]);
+  const [images, setImages] = useState([]);
   const onSearchSubmit = async (term) => {
     try {
       const params = {
