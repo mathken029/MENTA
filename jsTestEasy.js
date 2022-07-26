@@ -1,4 +1,4 @@
-//テスト用のシート
+//テスト用のシートの難易度EASY
 //https://docs.google.com/spreadsheets/d/11cGw_2ZxroXRoDMjJVmyXEwG38Kz8Llojm-btS0CTIs/edit?pli=1#gid=461908147
 //シート「【課題】ドリル」
 

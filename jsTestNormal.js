@@ -126,12 +126,12 @@ splittedArray.forEach((str) => console.log(str));
 
 // confirmメソッドを使用し、名前が間違っていないか確認するポップアップを表示させてましょう(テンプレートリテラルを使用して作成してください)
 
-const namae = "Scot";
-if (confirm(`${namae}さんで間違い無いですか？`)) {
-  console.log(`ようこそ${namae}さん`);
-} else {
-  console.log("もう一度正しい名前を入力してください");
-}
+// const namae = "Scot";
+// if (confirm(`${namae}さんで間違い無いですか？`)) {
+//   console.log(`ようこそ${namae}さん`);
+// } else {
+//   console.log("もう一度正しい名前を入力してください");
+// }
 
 //■カテゴリ：オブジェクト
 
@@ -141,7 +141,7 @@ if (confirm(`${namae}さんで間違い無いですか？`)) {
 // ③関数getObjectNameの実引数にobjectを渡して実行し、返り値をログ出力してください。
 
 const object1 = { name: "Bob", age: 20 };
-// ここから始めてください
+console.log(object1.name);
 
 // オブジェクトのnameプロパティの値を関数を使ってログに出力しよう
 // ①仮引数objectを持つ関数getObjectNameを定義してください。
@@ -150,9 +150,10 @@ const object1 = { name: "Bob", age: 20 };
 
 const object2 = { name: "Bob", age: 20 };
 
-// const getObjectName = () => {
-// }
-// console.log();
+const getObjectName = (object) => {
+  return object.name;
+};
+console.log(getObjectName(object2));
 
 // オブジェクトのageプロパティの値を関数を使って、30に変更し、オブジェクトをログに出力して、ageプロパティが変更されているのを確認しよう
 // ①仮引数numberとobjを持つ、関数changeAgeを定義してください
@@ -160,7 +161,12 @@ const object2 = { name: "Bob", age: 20 };
 // ③返り値に仮引数に渡されたobjを設定してください。
 
 const object3 = { age: 35, weight: 80 };
-// ここから処理を書いてください。
+const changeAge = (number, object) => {
+  object.age = number;
+  return object;
+};
+
+console.log(changeAge(40, object3));
 
 // オブジェクトのプロパティの値を更新する②
 // ①定数libraryの中のオブジェクトbookのyearプロパティの値を"10/22/1876"に更新してください。
@@ -172,12 +178,20 @@ const library = {
   },
 };
 
+library.book.year = "10/22/1876";
+console.log(library);
+
 // 関数の引数にオブジェクトと値を渡すとプロパティweightとその値を追加する関数を作成し、ログに出力してみよう
 // ①weightプロパティに""50kg""の値を持たせて、定数objectに追加してください。
 // ②コンソール上にobjectを表示させ、weightが追加されていることを確認してください。
 
-const object = { name: "Bob", age: 35 };
-// ここから処理を書いてください。
+const person1 = { name: "Bob", age: 35 };
+
+const addWeight = (obj, number) => {
+  obj.weight = number;
+  console.log(obj);
+};
+addWeight(person1, 40);
 
 // オブジェクトのプロパティに複数の値を持つhobby配列を追加する
 // ①定数personの中にhobbyプロパティを定義してください。
@@ -185,9 +199,18 @@ const object = { name: "Bob", age: 35 };
 // ③それぞれコンソール上にreading, shoppingと出力されるようにログ出力してください。
 
 const person = { name: "Bob", age: 35 };
-// ここから処理を書いてください。
+person.hobby = ["reading", "shopping"];
+console.log(person.hobby[0]);
+console.log(person.hobby[1]);
 
 // 引数にオブジェクトと消去したいプロパティを渡すことでオブジェクトのプロパティを削除することができる関数を作成し、ログ出力でプロパティが削除できたことを確認する
+const person2 = { name: "Bob", age: 35 };
+
+const deleteProperty = (obj, property) => {
+  delete obj[property];
+  console.log(obj);
+};
+deleteProperty(person2, "age");
 
 //■カテゴリ：配列操作
 
@@ -196,25 +219,32 @@ const person = { name: "Bob", age: 35 };
 
 const fruits = ["apple", "grape", "fig"];
 
-// const answer =
+const answer1 = fruits.filter((fruit) => fruit.length === 3);
+console.log(answer1);
 
 // オブジェクト配列からあるプロパティのみの配列を取得する
+const fruits2 = ["apple", "grape", "fig"];
+
+const answer2 = fruits.filter((fruit) => fruit === "apple");
+console.log(answer2);
 
 // 配列内の要素をすべて足し合わせる
 // 配列arrayの要素を全て足し合わせて変数resultに返してください。
 
 const array0 = [1, 2, 3, 4, 5];
 
-// const result = array.reduce();
+const result = array0.reduce((sum, number) => sum + number);
+console.log(result);
 
 // スプレッド構文を用いて配列の要素を展開する③
 // 配列arrayと配列array2をマージした新たな配列array3をスプレッド構文を使用して作成してください。
 
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [6, 7, 8, 9, 10];
-// const array3 =
+const array3 = [...array1, ...array2];
+console.log(array3);
 
-//■カテゴリ：配列操作
+//■カテゴリ：配列オブジェクト操作
 
 // 配列の中の2番目のオブジェクト要素を取得してログ出力する
 // ログに配列の2番目の要素を出力してください。
@@ -224,7 +254,8 @@ const object4 = [
   { id: 2, name: "Bob", age: 20 },
   { id: 3, name: "Michael", age: 15 },
 ];
-// ここに処理を書いてください。
+
+console.log(object4[1]);
 
 // 配列内のオブジェクトのidプロパティが2のオブジェクト要素を取得する。
 // ①配列メソッドのfindを使用し、条件に最初に一致した要素を定数として定義する。
@@ -235,7 +266,9 @@ const object5 = [
   { id: 2, name: "Bob", age: 20 },
   { id: 3, name: "Michael", age: 15 },
 ];
-// ここに処理を書いてください。
+
+const answer55 = object5.find((element) => element.id === 2);
+console.log(answer55);
 
 // 配列内のオブジェクトのageプロパティが15のオブジェクト要素を全て取得する。
 // ①配列メソッドのfindを使用し、条件に最初に一致した要素を定数として定義する。
@@ -246,16 +279,33 @@ const object6 = [
   { id: 2, name: "Bob", age: 20 },
   { id: 3, name: "Michael", age: 15 },
 ];
-// ここに処理を書いてください。
+
+const answer6 = object6.filter((element) => element.age === 15);
+console.log(answer6);
 
 // 配列内のオブジェクトのageプロパティが15の要素を削除する
 
-// const object7 =
-// const filteredObject =
+const object7 = [
+  { id: 1, name: "John", age: 15 },
+  { id: 2, name: "Bob", age: 20 },
+  { id: 3, name: "Michael", age: 15 },
+];
+
+const filteredObject = object7.filter((element) => element.age !== 15);
+console.log(filteredObject);
 
 //■カテゴリ：スプレッド構文
 
 // 特定のプロパティの値だけ更新して、新しいオブジェクトを作成しよう
+// ★解答わからず
+
+const object8 = [
+  { id: 1, name: "John", age: 15 },
+  { id: 2, name: "Bob", age: 20 },
+  { id: 3, name: "Michael", age: 15 },
+];
+const object9 = [...object8];
+console.log(object9);
 
 //■カテゴリ：fetch, filter
 
@@ -263,10 +313,16 @@ const object6 = [
 // ①""https://jsonplaceholder.typicode.com/users""
 // ②①のURLを使ってダミーデータを取得し、コンソールログに表示させてください。
 
-// ""https://jsonplaceholder.typicode.com/users""
+// ★fetch is not definedで実行できず
+
+// fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
 
 // JSONplacehokderのダミーデータを使って、idが5のデータをログに表示させてみよう
 // ①"https://jsonplaceholder.typicode.com/users"
+
+// ★回答できず
 
 //■カテゴリ：その他
 
@@ -283,8 +339,23 @@ const object6 = [
 // ①②に従って関数を定義してください。
 function redirectUrl(language) {
   let url = "www.example.com";
-  // switch文を書いてください。
+  switch (language) {
+    case "English":
+      return url + "/en";
+      break;
+    case "Japanese":
+      return url + "/ja";
+      break;
+    case "English(Australia)":
+      return url + "/en-au";
+      break;
+    default:
+      return url;
+  }
 }
 
 // ③ログ出力してください。
-console.log();
+console.log(redirectUrl("English"));
+console.log(redirectUrl("Japanese"));
+console.log(redirectUrl("English(Australia)"));
+console.log(redirectUrl("Chinese"));
