@@ -70,7 +70,11 @@
 #         print("範囲外の数字が入力されたようです。0～100の数字を入力してください")
 
 # ■すごろく<http://www.kitako.tokyo/lib/CTask.aspx?id=2>
+
+
+# ■ハイカード<http://www.kitako.tokyo/lib/CTask.aspx?id=3>
 from random import randrange
+from xmlrpc.client import boolean
 
 money: int = 100
 gameEndMoneyThreshold: int = 1000
@@ -78,11 +82,11 @@ rate: int = 1
 
 
 def howMuchMoney():
-    return "所持金は" + str(money) + "$ です。"
+    return f"所持金は{money}$ です。"
 
 
 def displayCard(cardNumber: int):
-    match cardNumber:
+    match str(cardNumber):
         case "1":
             return "｜１｜"
         case "2":
@@ -110,10 +114,8 @@ def displayCard(cardNumber: int):
         case "13":
             return "｜Ｋ｜"
         case _:
-            return "1～13以外の数字が格納されています：" + str(cardNumber)
+            return f"1～13以外の数字が格納されています：{cardNumber}"
 
-def cardBattle():
-    
 
 print("最初に１枚カードが出ますから掛け金を決めてください。")
 print("次に出るカードが前のカードと同じか大きければ、あなたの勝ちです。")
@@ -121,40 +123,51 @@ print("掛け金が戻りますから、続けるかどうかを決めてくだ�
 print("続けて勝てば掛け金は２倍になります。")
 print("以降、４倍、８倍と戻るお金が増えます。")
 print("ただし、負けるとそれまでの勝ちはなくなります。")
-print("所持金が無くなって破産するか、" + str(gameEndMoneyThreshold) + "$ を超えるとゲーム終了です。")
+print(f"所持金が無くなって破産するか、{gameEndMoneyThreshold}$ を超えるとゲーム終了です。")
 print("----------------------------------------------")
 print("ゲームを開始します。" + howMuchMoney())
 
 
-# while True:
-print("最初のカードです。")
+while True:
+    print("最初のカードです。")
+    firstCardNumber: int = randrange(1, 14, 1)
+    print(displayCard(firstCardNumber))
 
-firstCardNumber: int = randrange(1, 14, 1)
-secondCardNumber: int = randrange(1, 14, 1)
+    betMoney: int = int(input(f"いくら賭けますか？(1$ ～{money}$ )"))
 
-print(displayCard(firstCardNumber))
+    nextGameFlag: boolean = False
+    while True:
+        secondCardNumber: int = randrange(1, 14, 1)
+        print(displayCard(secondCardNumber))
 
-betMoney: int = int(input("いくら賭けますか？(1$ ～" + money + "$ )"))
+        if secondCardNumber >= firstCardNumber:
+            winMoney: int = betMoney * rate
+            print(f"あなたの勝ち。{winMoney}$ の勝ちです。\n")
+            rate *= 2
 
-print(displayCard(secondCardNumber))
-
-if secondCardNumber >= firstCardNumber:
-    winMoney: int = betMoney * rate
-    print("あなたの勝ち。" + winMoney + "$ の勝ちです。")
-    rate *= 2
-    gameContinueFlag = input("倍率は" + rate + "倍。続けますか？（1=Yes 0=No）")
-    if gameContinueFlag == "0":
-        money += winMoney
-        print(howMuchMoney())
-    elif gameContinueFlag == "1":
-        # ここにwhile文でsecondCardで勝負し続ける処理を書く
-
-    else:
-        print("0か1の数字を入力してください")
-
-elif secondCardNumber < firstCardNumber:
-    money -= betMoney
-    print("あなたの負け。所持金は " + str(money) + "$ です。")
-else:
-    print("不正な値が含まれています。1枚目のカード：" + str(firstCardNumber))
-    print("2枚目のカード：" + str(secondCardNumber))
+            while True:
+                gameContinueFlag: int = int(input(f"倍率は{rate}倍。続けますか？（1=Yes 0=No）"))
+                if gameContinueFlag == 0:
+                    money += winMoney
+                    print(f"{howMuchMoney()}\n")
+                    nextGameFlag = True
+                    break
+                elif gameContinueFlag == 1:
+                    break
+                else:
+                    print("0か1の数字を入力してください")
+        elif secondCardNumber < firstCardNumber:
+            money -= betMoney
+            print(f"あなたの負け。{howMuchMoney()}\n")
+            nextGameFlag = True
+        else:
+            print(f"不正な値が含まれています。1枚目のカード：{firstCardNumber}")
+            print(f"2枚目のカード：{secondCardNumber}")
+        if nextGameFlag is True:
+            break
+    if money > 1000:
+        print(f"所持金が{money}$ で1000$ を超えたため上がりです。")
+        break
+    elif money <= 0:
+        print(f"所持金が{money}$ で0$ 以下となり破産したためゲームを終了します。")
+        break
