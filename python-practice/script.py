@@ -74,7 +74,6 @@
 
 # ■ハイカード<http://www.kitako.tokyo/lib/CTask.aspx?id=3>
 from random import randrange
-from xmlrpc.client import boolean
 
 money: int = 100
 gameEndMoneyThreshold: int = 1000
@@ -135,7 +134,7 @@ while True:
 
     betMoney: int = int(input(f"いくら賭けますか？(1$ ～{money}$ )"))
 
-    nextGameFlag: boolean = False
+    nextGameFlag: bool = False
     while True:
         secondCardNumber: int = randrange(1, 14, 1)
         print(displayCard(secondCardNumber))
