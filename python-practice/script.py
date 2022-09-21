@@ -116,6 +116,7 @@ while True:
                 break
             elif gameContinueFlag == "1":
                 position = 0
+                diceSum = 0
                 break
             else:
                 print("0か1の数字を入力してください")
