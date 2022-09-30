@@ -70,68 +70,70 @@
 #         print("範囲外の数字が入力されたようです。0～100の数字を入力してください")
 
 # ■すごろく<http://www.kitako.tokyo/lib/CTask.aspx?id=2>
-from random import randrange
+# from random import randrange
 
-print("\n")
-print("30マス先にゴールがあります。")
-print("1,2,3の3つの目を持つ特別なサイコロ10個を、好きな数だけ振って駒を進めます。")
-print("ぴったり上がりに止まれば終わりです。目の数が多ければ、余った目の数だけ戻ります。")
-print("----------------------------------------------\n")
+# print("\n")
+# print("30マス先にゴールがあります。")
+# print("1,2,3の3つの目を持つ特別なサイコロ10個を、好きな数だけ振って駒を進めます。")
+# print("ぴったり上がりに止まれば終わりです。目の数が多ければ、余った目の数だけ戻ります。")
+# print("----------------------------------------------\n")
 
-gameRound: int = 1
-position: int = 0
-goalPosition: int = 30
-goalDistance: int = 0
-roadInLeftMark: str = ""
-roadInRightMark: str = ""
-mark: str = "▲"
-road: str = "_ "
-goal: str = "|上がり！"
-diceAmount: int = 0
-dice: int = 0
-diceSum: int = 0
-gameContinueFlag: str = "1"
+# gameRound: int = 1
+# position: int = 0
+# goalPosition: int = 30
+# goalDistance: int = 0
+# roadInLeftMark: str = ""
+# roadInRightMark: str = ""
+# mark: str = "▲"
+# road: str = "_ "
+# goal: str = "|上がり！"
+# diceAmount: int = 0
+# dice: int = 0
+# diceSum: int = 0
+# gameContinueFlag: str = "1"
 
-while True:
-    goalDistance = goalPosition - position
-    roadInLeftMark = road * (position)
-    roadInRightMark = road * (goalDistance)
+# while True:
+#     goalDistance = goalPosition - position
+#     roadInLeftMark = road * (position)
+#     roadInRightMark = road * (goalDistance)
 
-    print(f"{roadInLeftMark}{mark}{roadInRightMark}{goal}")
+#     print(f"{roadInLeftMark}{mark}{roadInRightMark}{goal}")
 
-    diceAmount = int(input(f"残り{goalDistance}マスです。サイコロの数は？"))
+#     diceAmount = int(input(f"残り{goalDistance}マスです。サイコロの数は？"))
 
-    for i in range(diceAmount):
-        dice += randrange(1, 4, 1)
+#     for i in range(diceAmount):
+#         dice += randrange(1, 4, 1)
 
-    diceSum += dice
-    print(f"出た目の合計  {diceSum}")
+#     diceSum += dice
+#     print(f"出た目の合計  {diceSum}")
 
-    if dice == goalDistance:
-        print(f"おめでとう！！ {gameRound}回目で上がりです")
+#     if dice == goalDistance:
+#         print(f"おめでとう！！ {gameRound}回目で上がりです")
 
-        while True:
-            gameContinueFlag = input("もう一度やりますか？（0=No 1=Yes）")
-            if gameContinueFlag == "0":
-                break
-            elif gameContinueFlag == "1":
-                position = 0
-                diceSum = 0
-                break
-            else:
-                print("0か1の数字を入力してください")
+#         while True:
+#             gameContinueFlag = input("もう一度やりますか？（0=No 1=Yes）")
+#             if gameContinueFlag == "0":
+#                 break
+#             elif gameContinueFlag == "1":
+#                 position = 0
+#                 diceSum = 0
+#                 break
+#             else:
+#                 print("0か1の数字を入力してください")
 
-        if gameContinueFlag == "0":
-            break
+#         if gameContinueFlag == "0":
+#             break
+#         # 初期化を忘れずに
+#         gameRound = 0
 
-    elif dice < goalDistance:
-        position += dice
+#     elif dice < goalDistance:
+#         position += dice
 
-    elif dice > goalDistance:
-        position = goalPosition - (dice - goalDistance)
+#     elif dice > goalDistance:
+#         position = goalPosition - (dice - goalDistance)
 
-    dice = 0
-    gameRound += 1
+#     dice = 0
+#     gameRound += 1
 
 # ■ハイカード<http://www.kitako.tokyo/lib/CTask.aspx?id=3>
 # from random import randrange
@@ -193,7 +195,17 @@ while True:
 #     firstCardNumber: int = randrange(1, 14, 1)
 #     print(displayCard(firstCardNumber))
 
-#     betMoney: int = int(input(f"いくら賭けますか？(1$ ～{money}$ )"))
+#     while True:
+#         # 数値以外が入力された場合の例外処理
+#         try:
+#             betMoney: int = int(input(f"いくら賭けますか？(1$ ～{money}$ )"))
+#             # 入力値の整合性チェック
+#             if 1 <= betMoney <= money:
+#                 break
+#             else:
+#                 print("入力値が不正です。")
+#         except Exception as e:
+#             print("入力値が不正です。")
 
 #     nextGameFlag: bool = False
 #     while True:
@@ -206,16 +218,21 @@ while True:
 #             rate *= 2
 
 #             while True:
-#                 gameContinueFlag: int = int(input(f"倍率は{rate}倍。続けますか？（1=Yes 0=No）"))
-#                 if gameContinueFlag == 0:
-#                     money += winMoney
-#                     print(f"{howMuchMoney()}\n")
-#                     nextGameFlag = True
-#                     break
-#                 elif gameContinueFlag == 1:
-#                     break
-#                 else:
+#                 # 数値以外が入力された場合の例外処理
+#                 try:
+#                     gameContinueFlag: int = int(input(f"倍率は{rate}倍。続けますか？（1=Yes 0=No）"))
+#                     if gameContinueFlag == 0:
+#                         money += winMoney
+#                         print(f"{howMuchMoney()}\n")
+#                         nextGameFlag = True
+#                         break
+#                     elif gameContinueFlag == 1:
+#                         break
+#                     else:
+#                         print("0か1の数字を入力してください")
+#                 except Exception as e:
 #                     print("0か1の数字を入力してください")
+
 #         elif secondCardNumber < firstCardNumber:
 #             money -= betMoney
 #             print(f"あなたの負け。{howMuchMoney()}\n")
